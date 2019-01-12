@@ -1,21 +1,26 @@
 # ContextViolation
 
-**TODO: Add description**
+**This is super alpha**, it is the result of 2 hours of hacking and missing tests and configuration parameters and probably doesn't cover all the edge cases.
+
+Credo check to check if function calls are made into a [context](https://hexdocs.pm/phoenix/contexts.html) and bypass the root modules public API.
+Example: `Post.publish/2` calling a function on `Account.User`, which should go through `Account`.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `context_violation` to your list of dependencies in `mix.exs`:
+The package can be installed
+by adding `credo_context_violation` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:context_violation, "~> 0.1.0"}
+    {:credo_context_violation, "~> 0.1.0", runtime: false}
   ]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/context_violation](https://hexdocs.pm/context_violation).
+Then include it in `.credo.exs`:
+
+```elixir
+  {CredoContextViolation, []}
+```
 
