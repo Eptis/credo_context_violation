@@ -1,4 +1,4 @@
-defmodule Credo.Check.ContextViolation do
+defmodule CredoContextViolation do
   @moduledoc """
     Checks if modules are not violating contexts by reaching into other module namespaces.
 
